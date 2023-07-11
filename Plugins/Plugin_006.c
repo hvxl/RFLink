@@ -195,7 +195,7 @@ void Blyss_Send(unsigned long address, byte devtype) {
     uint32_t fdatabit;
     uint32_t fdatamask = 0x800000;
     uint32_t fsendbuff;
-    unsigned char RollingCode[] = { 0x98, 0xDA, 0x1E, 0xE6, 0x67, 0x98};
+    unsigned char RollingCode[] = { 0x98, 0xDA, 0x1E, 0xE6, 0x67};
     
     digitalWrite(PIN_RF_RX_VCC,LOW);                // Power off the RF receiver
     digitalWrite(PIN_RF_TX_VCC,HIGH);               // Turn on the RF transmitter
@@ -254,7 +254,7 @@ void Blyss_Send(unsigned long address, byte devtype) {
         }
         // --------------
         // Send rolling code & timestamp - 16 bits
-        fsendbuff=RollingCode[nRepeat];
+        fsendbuff=RollingCode[nRepeat % 5];
         fsendbuff=(fsendbuff<<8)+temp;
         //fsendbuff=0x9800 + temp;
         fdatamask=0x8000;
