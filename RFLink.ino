@@ -15,14 +15,16 @@
 // ********************************************************************************************************************************
 
 // ================================================================================================================================
-// Supply the full path to the RFLink files in the define below 
+// Supply the full path to the RFLink files in the define below
+// Better yet, pass it as a compiler option (as done by the Makefile)
 //
 // Geef in onderstaande "define" regel het volledige pad op waar de .ino bestanden zich bevinden die je nu geopend hebt.
 // ================================================================================================================================
 
-#define SKETCH_PATH D:\arduino\RFLink
+#ifndef SKETCH_PATH
+  #define SKETCH_PATH D:\arduino\RFLink
+#endif
 
 // ================================================================================================================================
 // IMPORTANT NOTE: This code only runs on an Arduino MEGA !!!!!!!!!!!!!!!!!!!!!!  It was designed that way for various reasons.
 // ================================================================================================================================
-

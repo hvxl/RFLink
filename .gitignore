@@ -1,0 +1,5 @@
+arduino/**
+build/**
+staging/**
+arduino-cli.yaml
+Makefile-local.mk
