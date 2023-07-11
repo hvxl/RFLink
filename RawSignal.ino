@@ -18,7 +18,7 @@ boolean ScanEvent(void) {                                         // Deze routin
  * bij de 433RX is in rust is de uitgang laag. StateSignal moet HIGH zijn
  * 
  \*********************************************************************************************/
-const unsigned long LoopsPerMilli=345;
+const unsigned long LoopsPerMilli=482;
 const unsigned long Overhead=0;  
 
 // Because this is a time critical routine, we use global variables so that the variables 
@@ -58,7 +58,7 @@ boolean FetchSignal(byte DataPin, boolean StateSignal) {
      do{                                                                         // read the pulses in microseconds and place them in temporary buffer RawSignal
        numloops = 0;
        while (((*portInputRegister(Fport) & Fbit) == FstateMask) ^ Ftoggle)      // while() loop *A*
-       if (numloops++ == maxloops) break;                                        // timeout 
+         if (numloops++ == maxloops) break;                                      // timeout
        PulseLength=((numloops + Overhead)* 1000) / LoopsPerMilli;                // Contains pulslength in microseconds
        if (PulseLength<MIN_PULSE_LENGTH) break;                                  // Pulse length too short
        Ftoggle=!Ftoggle;    
@@ -116,4 +116,3 @@ void RawSendRF(void) {                                                    // * D
   RFLinkHW();
 }
 /*********************************************************************************************/
-
