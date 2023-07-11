@@ -91,3 +91,6 @@ boolean Plugin_061(byte function, char *string) {
       return true;
 }
 #endif // Plugin_061
+#undef ALARMPIRV1_PULSEMID
+#undef ALARMPIRV1_PULSEMAX
+#undef ALARMPIRV1_PULSEMIN

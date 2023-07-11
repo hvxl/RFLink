@@ -139,3 +139,4 @@ boolean Plugin_046(byte function, char *string) {
       return true;
 }
 #endif // PLUGIN_046
+#undef PLUGIN_ID

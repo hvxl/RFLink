@@ -137,3 +137,4 @@ boolean PluginTX_072(byte function, char *string) {
        return success;
 }
 #endif // PLUGIN_TX_072
+#undef PLUGIN_ID

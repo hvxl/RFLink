@@ -141,3 +141,4 @@ boolean Plugin_075(byte function, char *string) {
       return true;
 }
 #endif // PLUGIN_075_CORE
+#undef PLUGIN_ID

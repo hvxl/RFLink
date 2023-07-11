@@ -910,3 +910,4 @@ boolean Plugin_048(byte function, char *string) {
 #endif // PLUGIN_048_CORE
   return success;
 }
+#undef PLUGIN_ID
